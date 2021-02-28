@@ -44,6 +44,23 @@ const {
 } = restaurant;
 console.log(restaurantName, hours, tags);
 
+// setting a default value for a destructured object
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// mutating variables with objects
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+
 // destructuring arrays
 // const arr = [2, 3, 4];
 // const a = arr[0];
