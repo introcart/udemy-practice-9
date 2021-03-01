@@ -51,52 +51,62 @@ const restaurant = {
     },
   },
 };
+// Use any data type, return any data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log(true || 0);
+console.log('' || 'Jonas');
+console.log(undefined || null);
+
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'jonas');
 
 //
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-// rest because ... is on the left side
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// // rest because ... is on the left side
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-// objects
+// // objects
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let num of numbers) {
-    sum += num;
-  }
-  return sum;
-};
-console.log(add(2, 3));
-console.log(add(5, 3, 7, 2));
-console.log(add(5, 5, 6, 3, 6, 7, 8));
+// // functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let num of numbers) {
+//     sum += num;
+//   }
+//   return sum;
+// };
+// console.log(add(2, 3));
+// console.log(add(5, 3, 7, 2));
+// console.log(add(5, 5, 6, 3, 6, 7, 8));
 
-const x = [23, 5, 7];
-console.log(add(...x));
+// const x = [23, 5, 7];
+// console.log(add(...x));
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms');
-// spread operator
-// const arr = [7, 8, 9];
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
+// // spread operator
+// // const arr = [7, 8, 9];
 
-// const newArr = [1, 2, ...arr];
-// console.log(newArr);
+// // const newArr = [1, 2, ...arr];
+// // console.log(newArr);
 
-// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-// console.log(newMenu);
+// // const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// // console.log(newMenu);
 
-// // Copy array
+// // // Copy array
 // const mainMenuCopy = [...restaurant.mainMenu];
 
 // // Join 2 arrays
