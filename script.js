@@ -74,6 +74,13 @@ console.log(openStr);
 const values = Object.values(hours);
 console.log(values);
 
+const entries = Object.entries(hours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 // // optional chaining es2020
 
