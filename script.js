@@ -46,44 +46,74 @@ const restaurant = {
     },
   },
 };
+
+//
+const arr = [1, 2, ...[3, 4]];
+
+// rest because ... is on the left side
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// objects
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+console.log(add(2, 3));
+console.log(add(5, 3, 7, 2));
+console.log(add(5, 5, 6, 3, 6, 7, 8));
 // spread operator
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-// Join 2 arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// // Join 2 arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-const str = 'Jonas';
-const letters = [...str, ' ', 'S.'];
-console.log(letters);
-console.log(...str);
-// real world example
-// const ingredients = [
-//   prompt("Let's make pasta! Ingredient 1?"),
-//   prompt('Ingredient 2?'),
-//   prompt('Ingredient 3'),
-// ];
-// console.log(ingredients);
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+// console.log(...str);
+// // real world example
+// // const ingredients = [
+// //   prompt("Let's make pasta! Ingredient 1?"),
+// //   prompt('Ingredient 2?'),
+// //   prompt('Ingredient 3'),
+// // ];
+// // console.log(ingredients);
 
-// restaurant.orderPasta(...ingredients);
+// // restaurant.orderPasta(...ingredients);
 
-// Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+// // Objects
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
 
-// Real copies that actually work on objects unlike other examples we've seen before
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// // Real copies that actually work on objects unlike other examples we've seen before
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 // spread operators used within functions
 //  Destructuring Objects
 // restaurant.orderDelivery({
