@@ -63,6 +63,75 @@ const restaurant = {
   },
 };
 
+const airline = 'TAP Air Portugal';
+
+const passenger = 'JoNAs';
+const passengerLower = passenger.toLocaleLowerCase();
+console.log(passengerLower);
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hell@jonas.io';
+const loginEmail = '  Hello@jonas.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+console.log(email === normalizedEmail);
+
+const checkEmail = function (firstEmail, secondEmail) {
+  return firstEmail === secondEmail;
+};
+console.log(checkEmail('spc2582@gmail.com', 'carton525@gmail.com'));
+
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23.  Boarding door 23!';
+console.log(announcement.replace('door', 'gate').replace('door', 'gate'));
+// regular expression example
+console.log(announcement.replace(/door/g, 'gate'));
+// Booleans
+
+// WOrking with strings part 1
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(airline.length);
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.indexOf('Portugal'));
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-1));
+// console.log(airline.slice(1, -1));
+
+// const checkMiddleSeat = function (seat) {
+//   // B and E are middle seats
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') {
+//     console.log('You got the 🤣 middle seat');
+//   } else {
+//     console.log('Congrats, you got lucky 🍀');
+//   }
+// };
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
 // Coding challenge 3
 // const gameEvents = new Map([
 //   [17, '⚽️ GOAL'],
