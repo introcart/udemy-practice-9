@@ -31,6 +31,11 @@ const restaurant = {
     console.log(`Here is your delicoius pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -76,6 +81,12 @@ const add = function (...numbers) {
 console.log(add(2, 3));
 console.log(add(5, 3, 7, 2));
 console.log(add(5, 5, 6, 3, 6, 7, 8));
+
+const x = [23, 5, 7];
+console.log(add(...x));
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
 // spread operator
 // const arr = [7, 8, 9];
 
