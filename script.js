@@ -3,7 +3,22 @@
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const hours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+// enhanced openingHours moved into restaurant.
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -11,27 +26,23 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  hours,
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicoius pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
@@ -51,82 +62,111 @@ const restaurant = {
     },
   },
 };
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+// optional chaining es2020
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
-// 7
+console.log(restaurant.openingHours.mon?.open); //if doesn't exist it fires undefined
+// console.log(restaurant.openingHours.mon.open); //error
+console.log(restaurant.openingHours?.mon?.open);
 
-// 1
-const players1 = [...game.players[0]];
-const players2 = [...game.players[1]];
-console.log(players1, players2);
-// 2
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
-// 3
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-// 4
-const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...players1];
-console.log(players1Final);
-// 5
-const { team1, x: draw, team2 } = game.odds;
-console.log(team1, draw, team2);
-// 6
-function printGoals(...numOfPlayerNames) {
-  for (let name of numOfPlayerNames) {
-    console.log(name);
-    let sum = 0;
-    for (let player of game.scored) {
-      if (name === player) {
-        sum += 1;
-      }
-    }
-    console.log(sum);
-  }
+// example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open;
+  console.log(`On ${day}, we open at ${open}`);
 }
-printGoals(...players1);
-// 7
-team1 < team2 && console.log('Team 1 is likely to win');
-team1 > team2 && console.log('Team 2 is likely to win');
+
+// For Loops
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) {
+//   console.log(item);
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log([...menu.entries()]);
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// // 7
+
+// // 1
+// const players1 = [...game.players[0]];
+// const players2 = [...game.players[1]];
+// console.log(players1, players2);
+// // 2
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+// // 3
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+// // 4
+// const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...players1];
+// console.log(players1Final);
+// // 5
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(team1, draw, team2);
+// // 6
+// function printGoals(...numOfPlayerNames) {
+//   for (let name of numOfPlayerNames) {
+//     console.log(name);
+//     let sum = 0;
+//     for (let player of game.scored) {
+//       if (name === player) {
+//         sum += 1;
+//       }
+//     }
+//     console.log(sum);
+//   }
+// }
+// printGoals(...players1);
+// // 7
+// team1 < team2 && console.log('Team 1 is likely to win');
+// team1 > team2 && console.log('Team 2 is likely to win');
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
 Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
