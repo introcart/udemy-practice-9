@@ -62,20 +62,32 @@ const restaurant = {
     },
   },
 };
-if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
-// optional chaining es2020
+const properties = Object.keys(hours);
+console.log(properties);
+let openStr = `We are open on ${properties.length} days: `;
 
-console.log(restaurant.openingHours.mon?.open); //if doesn't exist it fires undefined
-// console.log(restaurant.openingHours.mon.open); //error
-console.log(restaurant.openingHours?.mon?.open);
-
-// example
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open;
-  console.log(`On ${day}, we open at ${open}`);
+for (const day of Object.keys(hours)) {
+  openStr += `${day}, `;
 }
+console.log(openStr);
+
+const values = Object.values(hours);
+console.log(values);
+
+// if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+// // optional chaining es2020
+
+// console.log(restaurant.openingHours.mon?.open); //if doesn't exist it fires undefined
+// // console.log(restaurant.openingHours.mon.open); //error
+// console.log(restaurant.openingHours?.mon?.open);
+
+// // example
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open;
+//   console.log(`On ${day}, we open at ${open}`);
+// }
 
 // For Loops
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
