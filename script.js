@@ -62,24 +62,56 @@ const restaurant = {
     },
   },
 };
-const properties = Object.keys(hours);
-console.log(properties);
-let openStr = `We are open on ${properties.length} days: `;
 
-for (const day of Object.keys(hours)) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// sets
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pasta',
+//   'Pizza',
+//   'Risotto',
+//   'Risotto',
+//   'Pasta',
+// ]);
+// console.log(ordersSet);
+// console.log(new Set('Jonas'));
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// console.log(ordersSet);
+// ordersSet.delete('Risotto');
+// console.log(ordersSet);
+// // ordersSet.clear();
+// for (const order of ordersSet) console.log(order);
+// // example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = new Set(staff);
+// console.log(staffUnique);
+// const newArr = [...staffUnique];
+// console.log(newArr);
+// // how many different letters are in my name?
+// console.log(new Set('stevencarton').size);
+// // const properties = Object.keys(hours);
+// console.log(properties);
+// let openStr = `We are open on ${properties.length} days: `;
 
-const values = Object.values(hours);
-console.log(values);
+// for (const day of Object.keys(hours)) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
-const entries = Object.entries(hours);
-console.log(entries);
+// const values = Object.values(hours);
+// console.log(values);
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// const entries = Object.entries(hours);
+// console.log(entries);
+
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 // // optional chaining es2020
@@ -153,25 +185,25 @@ const game = {
 
 // Coding Challenge 2
 // 1
-console.log(game.scored);
-for (let [goal, name] of game.scored.entries()) {
-  console.log(`Goal: ${goal + 1} ${name}`);
-}
-// 2
-let sum = 0;
-let count = 0;
-for (let x of Object.values(game.odds)) {
-  console.log(x);
-  sum += x;
-  count += 1;
-}
-let answer = sum / count;
-console.log(answer.toFixed(2));
-// 3
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odd}`);
-}
+// console.log(game.scored);
+// for (let [goal, name] of game.scored.entries()) {
+//   console.log(`Goal: ${goal + 1} ${name}`);
+// }
+// // 2
+// let sum = 0;
+// let count = 0;
+// for (let x of Object.values(game.odds)) {
+//   console.log(x);
+//   sum += x;
+//   count += 1;
+// }
+// let answer = sum / count;
+// console.log(answer.toFixed(2));
+// // 3
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
 // // 7
 
 // // 1
