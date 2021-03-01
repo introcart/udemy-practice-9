@@ -63,35 +63,75 @@ const restaurant = {
   },
 };
 
+// Coding challenge 3
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
+
+// // 1
+// const gameEventsArr = [...gameEvents.values()];
+// console.log(gameEventsArr);
+// const gameEventsSet = new Set(gameEventsArr);
+// console.log(gameEventsSet);
+// // 2
+// console.log(gameEvents.delete(64));
+// console.log(gameEvents);
+// // 3
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+// // 4
+// for (let [time, event] of gameEvents) {
+//   if (time < 45) {
+//     console.log(`${event} occured in the first half`);
+//   } else {
+//     console.log(`${event} occured in the second half`);
+//   }
+// }
 // maps
 
 // another way to populate maps without set method
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'Javascript'],
-  ['correct', 3],
-  [true, 'Correct🍕'],
-  [false, 'Try Again!'],
-]);
-console.log(question);
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'Javascript'],
+//   ['correct', 3],
+//   [true, 'Correct🍕'],
+//   [false, 'Try Again!'],
+// ]);
+// console.log(question);
 
-// convert object to map
-console.log(Object.entries(hours));
-const hoursMap = new Map(Object.entries(hours));
-console.log(hoursMap);
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  // console.log(key, value);
-  if (typeof key === 'number') console.log(`Answer & ${key}: ${value}`);
-}
-const answer = Number(prompt('Your answer'));
-console.log(answer);
+// // convert object to map
+// console.log(Object.entries(hours));
+// const hoursMap = new Map(Object.entries(hours));
+// console.log(hoursMap);
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   // console.log(key, value);
+//   if (typeof key === 'number') console.log(`Answer & ${key}: ${value}`);
+// }
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
 
-console.log(question.get(question.get('correct') === answer));
-// const rest = new Map();
-// rest.set('name', 'Classico Italiano');
+// console.log(question.get(question.get('correct') === answer));
+// // convert map to array
+// console.log([...question]);
+// // console.log(question.entries());
+// console.log(...question.keys());
+// console.log(...question.values());
+// // const rest = new Map();
+// // rest.set('name', 'Classico Italiano');
 // rest.set(1, 'Firenze, Italy');
 // console.log(rest.set(2, 'Lisbon, Portugal'));
 
