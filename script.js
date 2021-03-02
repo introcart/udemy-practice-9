@@ -101,6 +101,25 @@ console.log(announcement.replace('door', 'gate').replace('door', 'gate'));
 // regular expression example
 console.log(announcement.replace(/door/g, 'gate'));
 // Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airb') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus ');
+}
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+checkBaggage('I have a laptop, some Food, and a pocket Knife');
+checkBaggage('I have some socks and a camera');
+checkBaggage('I have some snacks and a gun for protection');
 
 // WOrking with strings part 1
 // const airline = 'TAP Air Portugal';
