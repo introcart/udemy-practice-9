@@ -63,6 +63,14 @@ const restaurant = {
   },
 };
 
+// Working with strings part 3
+
+console.log('a+very+nice+string'.split('+'));
+const [firstName, lastName] = 'Steven Carton'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+// Working with strings part 2
 const airline = 'TAP Air Portugal';
 
 const passenger = 'JoNAs';
