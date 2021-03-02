@@ -96,6 +96,16 @@ const maskedCreditCard = function (number) {
 console.log(maskedCreditCard(445664637836));
 
 // repeat method
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩 '.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
 // Working with strings part 2
 // const airline = 'TAP Air Portugal';
 
