@@ -82,6 +82,20 @@ const capitalizeName = function (name) {
 };
 capitalizeName('steven patrick carton');
 
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+console.log('Jonas'.padStart(25, '+'));
+
+const maskedCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskedCreditCard(445664637836));
+
+// repeat method
 // Working with strings part 2
 // const airline = 'TAP Air Portugal';
 
